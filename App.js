@@ -1,21 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import { Provider as ThemeProvider } from "react-native-paper";
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
+import Logo from "./components/Logo";
+import { theme } from "./styles/theme";
+import {
+  useFonts,
+  TitilliumWeb_400Regular,
+  TitilliumWeb_700Bold,
+} from "@expo-google-fonts/titillium-web";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
 });
+
+const App = () => {
+  let [fontLoaded] = useFonts({
+    TitilliumWeb_400Regular,
+    TitilliumWeb_700Bold,
+  });
+
+  return (
+    fontLoaded && (
+      <ThemeProvider theme={theme}>
+        <View style={styles.container}>
+          <Logo />
+        </View>
+      </ThemeProvider>
+    )
+  );
+};
+
+export default App;
