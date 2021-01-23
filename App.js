@@ -1,22 +1,14 @@
-import { Provider as ThemeProvider } from 'react-native-paper';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import Logo from './components/Logo';
-import { theme } from './styles/theme';
+import { Provider as ThemeProvider } from 'react-native-paper';
+import { View } from 'react-native';
+import { theme, styles } from './styles/theme';
 import {
   useFonts,
   TitilliumWeb_400Regular,
   TitilliumWeb_700Bold,
 } from '@expo-google-fonts/titillium-web';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-});
+import Header from './components/Header';
+import Navigation from './components/Navigation';
 
 const App = () => {
   let [fontLoaded] = useFonts({
@@ -28,8 +20,9 @@ const App = () => {
     fontLoaded && (
       <ThemeProvider theme={theme}>
         <View style={styles.container}>
-          <Logo />
+          <Header />
         </View>
+        <Navigation />
       </ThemeProvider>
     )
   );
