@@ -1,20 +1,20 @@
-import { Provider as ThemeProvider } from "react-native-paper";
-import React from "react";
-import { StyleSheet, View, Text } from "react-native";
-import Logo from "./components/Logo";
-import { theme } from "./styles/theme";
+import { Provider as ThemeProvider } from 'react-native-paper';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import Logo from './components/Logo';
+import { theme } from './styles/theme';
 import {
   useFonts,
   TitilliumWeb_400Regular,
   TitilliumWeb_700Bold,
-} from "@expo-google-fonts/titillium-web";
+} from '@expo-google-fonts/titillium-web';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "flex-start",
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
 });
 

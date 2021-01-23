@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import { Title, Subheading } from "react-native-paper";
-import { StyleSheet } from "react-native";
+import React, { Fragment } from 'react';
+import { Title, Subheading } from 'react-native-paper';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   title: {

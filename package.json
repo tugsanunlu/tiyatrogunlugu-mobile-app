@@ -5,7 +5,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "prettier": "prettier --check './**/*.js'",
+    "audit": "yarn audit --level=moderate"
   },
   "dependencies": {
     "@expo-google-fonts/titillium-web": "^0.1.0",
@@ -19,7 +21,8 @@
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
-    "@babel/core": "~7.9.0"
+    "@babel/core": "~7.9.0",
+    "prettier": "^2.2.1"
   },
   "private": true
 }

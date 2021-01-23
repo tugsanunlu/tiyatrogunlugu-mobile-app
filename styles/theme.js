@@ -1,20 +1,20 @@
-import { configureFonts, DefaultTheme } from "react-native-paper";
+import { configureFonts, DefaultTheme } from 'react-native-paper';
 
 const fontConfig = {
   web: {
     regular: {
-      fontFamily: "TitilliumWeb_400Regular",
+      fontFamily: 'TitilliumWeb_400Regular',
     },
     medium: {
-      fontFamily: "TitilliumWeb_700Bold",
+      fontFamily: 'TitilliumWeb_700Bold',
     },
   },
   android: {
     regular: {
-      fontFamily: "TitilliumWeb_400Regular",
+      fontFamily: 'TitilliumWeb_400Regular',
     },
     medium: {
-      fontFamily: "TitilliumWeb_700Bold",
+      fontFamily: 'TitilliumWeb_700Bold',
     },
   },
 };
