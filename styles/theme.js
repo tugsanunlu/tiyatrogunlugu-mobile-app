@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
-    padding: 10,
   },
 });
 

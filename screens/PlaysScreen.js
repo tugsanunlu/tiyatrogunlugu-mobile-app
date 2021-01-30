@@ -3,12 +3,12 @@ import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 import { styles } from '../styles/theme';
 
-const ContactScreen = () => {
+const PlaysScreen = () => {
   return (
     <View style={{ ...styles.container, flex: 1 }}>
-      <Text>İletişim ayrıntıları geliyor...</Text>
+      <Text>Kategori ayrıntıları geliyor...</Text>
     </View>
   );
 };
 
-export default ContactScreen;
+export default PlaysScreen;
