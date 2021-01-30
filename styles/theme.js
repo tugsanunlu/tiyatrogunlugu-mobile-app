@@ -23,14 +23,17 @@ const fontConfig = {
 const theme = {
   ...DefaultTheme,
   fonts: configureFonts(fontConfig),
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#428bca',
+  },
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'flex-start',
+    padding: 10,
   },
 });
 

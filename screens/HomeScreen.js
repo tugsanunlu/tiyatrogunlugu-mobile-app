@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { styles } from '../styles/theme';
+import PostList from '../components/PostList';
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>Home Page</Text>
+    <View style={{ ...styles.container, flex: 1 }}>
+      <PostList />
     </View>
   );
 };
