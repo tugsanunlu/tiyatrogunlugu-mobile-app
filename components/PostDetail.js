@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import { Card, Paragraph, Button } from 'react-native-paper';
+import { Card, Button, Paragraph } from 'react-native-paper';
 import { styles } from '../styles/theme';
+import HTML from 'react-native-render-html';
 
 const PostDetail = ({ post, navigation }) => {
   return (
@@ -18,7 +19,7 @@ const PostDetail = ({ post, navigation }) => {
           )}
           <Card.Title title={post.title.rendered} />
           <Card.Content>
-            <Paragraph>{post.content.rendered}</Paragraph>
+            <HTML source={{ html: post.content.rendered }} />
           </Card.Content>
         </Card>
       </ScrollView>
