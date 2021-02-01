@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getPostById } from '../api/post';
 import { useNavigation } from '@react-navigation/native';
-import { Text } from 'react-native-paper';
 import PostDetail from '../components/PostDetail';
+import PostPlaceholder from '../components/PostPlaceholder';
 
 const PostScreen = ({ route }) => {
   const navigation = useNavigation();
@@ -19,7 +19,7 @@ const PostScreen = ({ route }) => {
   return post ? (
     <PostDetail post={post} navigation={navigation} />
   ) : (
-    <Text>Ayrıntılar geliyor...</Text>
+    <PostPlaceholder />
   );
 };
 

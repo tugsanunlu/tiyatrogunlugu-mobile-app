@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView } from 'react-native';
-import { Text } from 'react-native-paper';
 import { styles } from '../styles/theme';
 import PostList from '../components/PostList';
 import { getPosts } from '../api/post';
+import PostPlaceholder from '../components/PostPlaceholder';
 
 const HomeScreen = () => {
   const [posts, setPosts] = useState();
@@ -19,7 +19,9 @@ const HomeScreen = () => {
         {posts ? (
           <PostList posts={posts} />
         ) : (
-          <Text>Ayrıntılar geliyor...</Text>
+          Array.from({ length: 4 }).map((_, index) => (
+            <PostPlaceholder key={index} />
+          ))
         )}
       </ScrollView>
     </View>
