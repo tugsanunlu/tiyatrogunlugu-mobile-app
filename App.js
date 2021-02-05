@@ -8,6 +8,7 @@ import {
 } from '@expo-google-fonts/titillium-web';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
+import { PostContextProvider } from './store/post-context';
 
 const App = () => {
   let [fontLoaded] = useFonts({
@@ -17,10 +18,12 @@ const App = () => {
 
   return (
     fontLoaded && (
-      <ThemeProvider theme={theme}>
-        <Header />
-        <Navigation />
-      </ThemeProvider>
+      <PostContextProvider>
+        <ThemeProvider theme={theme}>
+          <Header />
+          <Navigation />
+        </ThemeProvider>
+      </PostContextProvider>
     )
   );
 };

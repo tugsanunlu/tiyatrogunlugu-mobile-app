@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import PostCard from '../components/PostCard';
+import PostPagination from '../components/PostPagination';
 
 const PostList = ({ posts }) => {
   return (
@@ -8,6 +9,7 @@ const PostList = ({ posts }) => {
       {posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
+      <PostPagination />
     </View>
   );
 };

@@ -1,9 +1,10 @@
 import { API } from '../utils/axios';
 
-const getPosts = () => {
+const getPosts = (page) => {
   return API.get('/posts', {
     params: {
       _embed: 1,
+      page,
     },
   });
 };
