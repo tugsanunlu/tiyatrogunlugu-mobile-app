@@ -3,12 +3,13 @@ import { View, FlatList } from 'react-native';
 import { ActivityIndicator } from 'react-native-paper';
 import PostCard from '../components/PostCard';
 import { PostContext } from '../store/post-context';
-import { ACTION_TYPES } from '../store/reducers';
+import { POST_ACTION_TYPES } from '../store/reducers';
 
 const PostList = ({ posts }) => {
-  const { dispatch } = useContext(PostContext);
+  const { state, dispatch } = useContext(PostContext);
+  const { isLoader } = state;
   const handleMorePosts = () => {
-    dispatch({ type: ACTION_TYPES.INCREASE_PAGE });
+    dispatch({ type: POST_ACTION_TYPES.INCREASE_PAGE });
   };
 
   return (
@@ -17,7 +18,7 @@ const PostList = ({ posts }) => {
         data={posts}
         renderItem={({ item }) => <PostCard post={item} />}
         keyExtractor={(post) => post.id.toString()}
-        onEndReached={handleMorePosts}
+        onEndReached={!isLoader && handleMorePosts}
         onEndReachedThreshold={0.3}
         ListFooterComponent={() => (
           <ActivityIndicator size={35} style={{ marginVertical: 20 }} />

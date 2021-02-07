@@ -4,6 +4,7 @@ import { postReducer } from '../store/reducers';
 const initialState = {
   posts: [],
   page: 1,
+  isLoader: false,
 };
 
 const PostContext = createContext(initialState);
