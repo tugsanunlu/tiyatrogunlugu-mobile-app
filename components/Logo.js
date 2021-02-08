@@ -2,13 +2,6 @@ import React, { Fragment } from 'react';
 import { Title, Subheading } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
-  title: {
-    marginTop: 40,
-    fontSize: 25,
-  },
-});
-
 const Logo = () => {
   return (
     <Fragment>
@@ -19,5 +12,12 @@ const Logo = () => {
     </Fragment>
   );
 };
+
+const styles = StyleSheet.create({
+  title: {
+    marginTop: 40,
+    fontSize: 25,
+  },
+});
 
 export default Logo;

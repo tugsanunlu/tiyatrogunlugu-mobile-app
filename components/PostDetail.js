@@ -1,13 +1,11 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { Card, Button } from 'react-native-paper';
-import { styles } from '../styles/theme';
+import { styles, fonts } from '../styles/theme';
 import HTML from 'react-native-render-html';
 import PostTagList from './PostTagList';
 
 const PostDetail = ({ post, navigation }) => {
-  const hasFeaturedMedia = post._embedded['wp:featuredmedia'];
-  const featuredMedia = post._embedded['wp:featuredmedia'][0].source_url;
   const tags = post._embedded['wp:term'][1];
 
   return (
@@ -15,16 +13,19 @@ const PostDetail = ({ post, navigation }) => {
       <ScrollView>
         <Card style={{ marginBottom: 15 }}>
           <Button onPress={() => navigation.goBack()}>Geri dön</Button>
-          {hasFeaturedMedia && (
-            <Card.Cover
+          {post._embedded['wp:featuredmedia'] && (
+            <HTML
               source={{
-                uri: featuredMedia,
+                html: `<img src='${post._embedded['wp:featuredmedia'][0].source_url}' />`,
               }}
             />
           )}
           <Card.Title title={post.title.rendered} />
           <Card.Content>
-            <HTML source={{ html: post.content.rendered }} />
+            <HTML
+              source={{ html: post.content.rendered }}
+              baseFontStyle={{ fontFamily: fonts.regular }}
+            />
             {tags && <PostTagList tags={tags} />}
           </Card.Content>
         </Card>

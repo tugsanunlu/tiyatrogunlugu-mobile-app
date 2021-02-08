@@ -1,21 +1,34 @@
 import { StyleSheet } from 'react-native';
 import { configureFonts, DefaultTheme } from 'react-native-paper';
 
+const fonts = {
+  regular: 'TitilliumWeb_400Regular',
+  medium: 'TitilliumWeb_900Black',
+};
+
 const fontConfig = {
   web: {
     regular: {
-      fontFamily: 'TitilliumWeb_400Regular',
+      fontFamily: fonts.regular,
     },
     medium: {
-      fontFamily: 'TitilliumWeb_700Bold',
+      fontFamily: fonts.medium,
     },
   },
   android: {
     regular: {
-      fontFamily: 'TitilliumWeb_400Regular',
+      fontFamily: fonts.regular,
     },
     medium: {
-      fontFamily: 'TitilliumWeb_700Bold',
+      fontFamily: fonts.medium,
+    },
+  },
+  ios: {
+    regular: {
+      fontFamily: fonts.regular,
+    },
+    medium: {
+      fontFamily: fonts.medium,
     },
   },
 };
@@ -36,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { theme, styles };
+export { theme, styles, fonts };
