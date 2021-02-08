@@ -4,6 +4,7 @@ import { Card, Button } from 'react-native-paper';
 import { styles, fonts } from '../styles/theme';
 import HTML from 'react-native-render-html';
 import PostTagList from './PostTagList';
+import PostHTMLView from './PostHTMLView';
 
 const PostDetail = ({ post, navigation }) => {
   const tags = post._embedded['wp:term'][1];
@@ -22,10 +23,7 @@ const PostDetail = ({ post, navigation }) => {
           )}
           <Card.Title title={post.title.rendered} />
           <Card.Content>
-            <HTML
-              source={{ html: post.content.rendered }}
-              baseFontStyle={{ fontFamily: fonts.regular }}
-            />
+            <PostHTMLView html={post.content.rendered} />
             {tags && <PostTagList tags={tags} />}
           </Card.Content>
         </Card>
