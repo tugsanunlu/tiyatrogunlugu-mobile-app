@@ -26,6 +26,7 @@
     "react-native-render-html": "^5.0.1",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.15.2",
+    "react-native-vector-icons": "^8.0.0",
     "react-native-web": "~0.13.12",
     "react-navigation-drawer-no-warnings": "^5.11.5",
     "rn-placeholder": "^3.0.3"

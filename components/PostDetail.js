@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import { Card, Button } from 'react-native-paper';
-import { styles, fonts } from '../styles/theme';
+import { Card, Button, Text } from 'react-native-paper';
+import { styles } from '../styles/theme';
 import HTML from 'react-native-render-html';
 import PostTagList from './PostTagList';
 import PostHTMLView from './PostHTMLView';
+import { parseISODateTime } from '../utils/helpers';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const PostDetail = ({ post, navigation }) => {
   const tags = post._embedded['wp:term'][1];
@@ -23,6 +25,9 @@ const PostDetail = ({ post, navigation }) => {
           )}
           <Card.Title title={post.title.rendered} />
           <Card.Content>
+            <Text>
+              <Icon name="calendar" /> {parseISODateTime(post.date)}
+            </Text>
             <PostHTMLView html={post.content.rendered} />
             {tags && <PostTagList tags={tags} />}
           </Card.Content>

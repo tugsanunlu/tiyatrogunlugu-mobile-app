@@ -1,8 +1,10 @@
 import React from 'react';
-import { Button, Card } from 'react-native-paper';
+import { Button, Card, Text } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import PostHTMLView from './PostHTMLView';
 import HTML from 'react-native-render-html';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { parseISODateTime } from '../utils/helpers';
 
 const PostCard = ({ post }) => {
   const navigation = useNavigation();
@@ -18,6 +20,9 @@ const PostCard = ({ post }) => {
       )}
       <Card.Title title={post.title.rendered} />
       <Card.Content>
+        <Text>
+          <Icon name="calendar" /> {parseISODateTime(post.date)}
+        </Text>
         <PostHTMLView html={post.excerpt.rendered} />
       </Card.Content>
       <Card.Actions style={{ justifyContent: 'flex-end' }}>
