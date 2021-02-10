@@ -2,17 +2,29 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Logo from './Logo';
 import { styles } from '../styles/theme';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 
 const Header = () => {
+  const navigation = useNavigation();
+
   return (
     <View
       style={{
         ...styles.container,
         ...inlineStyles.shadow,
+        flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center',
         paddingBottom: 10,
       }}
     >
+      <Icon
+        name="bars"
+        size={34}
+        style={{ marginLeft: 20, marginTop: 30 }}
+        onPress={() => navigation.openDrawer()}
+      />
       <Logo />
     </View>
   );

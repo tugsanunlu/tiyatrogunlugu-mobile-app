@@ -6,6 +6,7 @@ import { getPosts } from '../api/post';
 import PostPlaceholder from '../components/PostPlaceholder';
 import { PostContext } from '../store/post-context';
 import { POST_ACTION_TYPES } from '../store/reducers';
+import Header from '../components/Header';
 
 const HomeScreen = () => {
   const { state, dispatch } = useContext(PostContext);
@@ -22,6 +23,7 @@ const HomeScreen = () => {
 
   return (
     <View style={{ ...styles.container, flex: 1 }}>
+      <Header />
       {posts.length ? (
         <PostList posts={posts} />
       ) : (

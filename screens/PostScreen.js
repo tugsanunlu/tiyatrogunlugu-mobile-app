@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { getPostById } from '../api/post';
 import { useNavigation } from '@react-navigation/native';
 import PostDetail from '../components/PostDetail';
 import PostPlaceholder from '../components/PostPlaceholder';
+import Header from '../components/Header';
 
 const PostScreen = ({ route }) => {
   const navigation = useNavigation();
@@ -16,10 +17,15 @@ const PostScreen = ({ route }) => {
     });
   }, [postId]);
 
-  return post ? (
-    <PostDetail post={post} navigation={navigation} />
-  ) : (
-    <PostPlaceholder />
+  return (
+    <Fragment>
+      <Header />
+      {post ? (
+        <PostDetail post={post} navigation={navigation} />
+      ) : (
+        <PostPlaceholder />
+      )}
+    </Fragment>
   );
 };
 

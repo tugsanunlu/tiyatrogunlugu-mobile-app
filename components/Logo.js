@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Title, Subheading } from 'react-native-paper';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 const Logo = () => {
   return (
-    <Fragment>
+    <View style={{ flex: 1, alignItems: 'center' }}>
       <Title style={styles.title}>Tiyatro Günlüğü</Title>
       <Subheading style={styles.subtitle}>
         çaylak bir tiyatro izleyicisinin notları
       </Subheading>
-    </Fragment>
+    </View>
   );
 };
 

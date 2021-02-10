@@ -3,10 +3,12 @@ import { Linking, View } from 'react-native';
 import { List, Title } from 'react-native-paper';
 import { styles } from '../styles/theme';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Header from '../components/Header';
 
 const ContactScreen = () => {
   return (
-    <View style={{ ...styles.container, flex: 1, padding: 10 }}>
+    <View style={{ ...styles.container, flex: 1 }}>
+      <Header />
       <Title>iletişim</Title>
       <List.Section>
         <List.Item

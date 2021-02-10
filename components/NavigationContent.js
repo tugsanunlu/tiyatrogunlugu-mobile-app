@@ -11,7 +11,7 @@ const NavigationContent = ({ navigation }) => {
   return (
     <Drawer.Section>
       <Drawer.Item
-        label="ana sayfa"
+        label="son yazılar"
         icon="home-outline"
         active={active === 'HomeScreen' || !active}
         onPress={() => handleNavigateChange('HomeScreen')}
@@ -19,8 +19,20 @@ const NavigationContent = ({ navigation }) => {
       <Drawer.Item
         label="izlediklerim"
         icon="drama-masks"
-        active={active === 'PlaysScreen'}
-        onPress={() => handleNavigateChange('PlaysScreen')}
+        active={active === 'HomeScreen'}
+        onPress={() => handleNavigateChange('HomeScreen')}
+      />
+      <Drawer.Item
+        label="fuaye konuşmaları"
+        icon="drama-masks"
+        active={active === 'HomeScreen'}
+        onPress={() => handleNavigateChange('HomeScreen')}
+      />
+      <Drawer.Item
+        label="duyurduklarım"
+        icon="drama-masks"
+        active={active === 'HomeScreen'}
+        onPress={() => handleNavigateChange('HomeScreen')}
       />
       <Drawer.Item
         label="iletişim"
