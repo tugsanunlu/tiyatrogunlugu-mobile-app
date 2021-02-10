@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Drawer } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const NavigationContent = ({ navigation }) => {
   const [active, setActive] = useState();
@@ -12,31 +13,39 @@ const NavigationContent = ({ navigation }) => {
     <Drawer.Section>
       <Drawer.Item
         label="son yazılar"
-        icon="home-outline"
+        icon={() => <Icon name="clock" solid size={24} style={{ width: 30 }} />}
         active={active === 'HomeScreen' || !active}
         onPress={() => handleNavigateChange('HomeScreen')}
       />
       <Drawer.Item
         label="izlediklerim"
-        icon="drama-masks"
+        icon={() => (
+          <Icon name="theater-masks" solid size={24} style={{ width: 30 }} />
+        )}
         active={active === 'HomeScreen'}
         onPress={() => handleNavigateChange('HomeScreen')}
       />
       <Drawer.Item
         label="fuaye konuşmaları"
-        icon="drama-masks"
+        icon={() => (
+          <Icon name="comments" solid size={24} style={{ width: 30 }} />
+        )}
         active={active === 'HomeScreen'}
         onPress={() => handleNavigateChange('HomeScreen')}
       />
       <Drawer.Item
         label="duyurduklarım"
-        icon="drama-masks"
+        icon={() => (
+          <Icon name="bullhorn" solid size={24} style={{ width: 30 }} />
+        )}
         active={active === 'HomeScreen'}
         onPress={() => handleNavigateChange('HomeScreen')}
       />
       <Drawer.Item
         label="iletişim"
-        icon="email-outline"
+        icon={() => (
+          <Icon name="envelope" solid size={24} style={{ width: 30 }} />
+        )}
         active={active === 'ContactScreen'}
         onPress={() => handleNavigateChange('ContactScreen')}
       />

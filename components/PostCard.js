@@ -3,7 +3,7 @@ import { Button, Card, Text } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import PostHTMLView from './PostHTMLView';
 import HTML from 'react-native-render-html';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import { parseISODateTime } from '../utils/helpers';
 
 const PostCard = ({ post }) => {

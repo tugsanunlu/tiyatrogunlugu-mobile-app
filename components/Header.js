@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Logo from './Logo';
 import { styles } from '../styles/theme';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
 
 const Header = () => {
@@ -21,7 +21,7 @@ const Header = () => {
     >
       <Icon
         name="bars"
-        size={34}
+        size={36}
         style={{ marginLeft: 20, marginTop: 30 }}
         onPress={() => navigation.openDrawer()}
       />

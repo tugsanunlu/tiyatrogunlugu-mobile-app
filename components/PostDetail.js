@@ -6,7 +6,7 @@ import HTML from 'react-native-render-html';
 import PostTagList from './PostTagList';
 import PostHTMLView from './PostHTMLView';
 import { parseISODateTime } from '../utils/helpers';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const PostDetail = ({ post, navigation }) => {
   const tags = post._embedded['wp:term'][1];
