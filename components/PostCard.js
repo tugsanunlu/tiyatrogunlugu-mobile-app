@@ -27,7 +27,9 @@ const PostCard = ({ post }) => {
       </Card.Content>
       <Card.Actions style={{ justifyContent: 'flex-end' }}>
         <Button
-          onPress={() => navigation.navigate('PostScreen', { postId: post.id })}
+          onPress={() =>
+            navigation.navigate('PostDetailScreen', { postId: post.id })
+          }
           mode="contained"
         >
           Devamı

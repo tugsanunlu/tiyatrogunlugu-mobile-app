@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Chip } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const PostTagList = ({ tags }) => {
   return (
@@ -8,7 +9,7 @@ const PostTagList = ({ tags }) => {
       {tags.map((tag) => (
         <Chip
           key={tag.id}
-          icon="tag"
+          icon={() => <Icon name="tag" />}
           mode="outlined"
           selected
           style={{ marginRight: 10, marginBottom: 10 }}

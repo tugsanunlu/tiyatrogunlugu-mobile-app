@@ -15,7 +15,10 @@ const PostDetail = ({ post, navigation }) => {
     <View style={{ ...styles.container, flex: 1 }}>
       <ScrollView>
         <Card style={{ marginBottom: 15 }}>
-          <Button onPress={() => navigation.goBack()}>Geri dön</Button>
+          <Button
+            icon={() => <Icon name="undo" size={15} />}
+            onPress={() => navigation.goBack()}
+          ></Button>
           {post._embedded['wp:featuredmedia'] && (
             <HTML
               source={{

@@ -8,13 +8,12 @@ import { PostContext } from '../store/post-context';
 import { POST_ACTION_TYPES } from '../store/reducers';
 import Header from '../components/Header';
 
-const HomeScreen = () => {
+const PostsScreen = () => {
   const { state, dispatch } = useContext(PostContext);
   const { posts, page } = state;
 
   useEffect(() => {
     dispatch({ type: POST_ACTION_TYPES.SET_LOADER_TOGGLE });
-
     getPosts(page).then((resp) => {
       dispatch({ type: POST_ACTION_TYPES.LOAD_POSTS, posts: resp.data });
       dispatch({ type: POST_ACTION_TYPES.SET_LOADER_TOGGLE });
@@ -35,4 +34,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default PostsScreen;

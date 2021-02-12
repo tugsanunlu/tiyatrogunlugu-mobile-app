@@ -1,52 +1,29 @@
 import React, { useState } from 'react';
-import { Drawer } from 'react-native-paper';
+import { Drawer, Title } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const NavigationContent = ({ navigation }) => {
-  const [active, setActive] = useState();
-  const handleNavigateChange = (screen) => {
-    navigation.navigate(screen);
+  const [active, setActive] = useState('PostsScreen');
+  const handleNavigateChange = (screen, categoryId) => {
+    navigation.navigate(screen, { categoryId });
     setActive(screen);
   };
 
   return (
     <Drawer.Section>
+      <Title style={{ textAlign: 'center', marginTop: 30 }}>
+        Tiyatro Günlüğü
+      </Title>
       <Drawer.Item
-        label="son yazılar"
-        icon={() => <Icon name="clock" solid size={24} style={{ width: 30 }} />}
-        active={active === 'HomeScreen' || !active}
-        onPress={() => handleNavigateChange('HomeScreen')}
-      />
-      <Drawer.Item
-        label="izlediklerim"
-        icon={() => (
-          <Icon name="theater-masks" solid size={24} style={{ width: 30 }} />
-        )}
-        active={active === 'HomeScreen'}
-        onPress={() => handleNavigateChange('HomeScreen')}
-      />
-      <Drawer.Item
-        label="fuaye konuşmaları"
-        icon={() => (
-          <Icon name="comments" solid size={24} style={{ width: 30 }} />
-        )}
-        active={active === 'HomeScreen'}
-        onPress={() => handleNavigateChange('HomeScreen')}
-      />
-      <Drawer.Item
-        label="duyurduklarım"
-        icon={() => (
-          <Icon name="bullhorn" solid size={24} style={{ width: 30 }} />
-        )}
-        active={active === 'HomeScreen'}
-        onPress={() => handleNavigateChange('HomeScreen')}
+        label="günlükler"
+        icon={() => <Icon name="book-open" solid size={24} />}
+        active={active === 'PostsScreen'}
+        onPress={() => handleNavigateChange('PostsScreen')}
       />
       <Drawer.Item
         label="iletişim"
-        icon={() => (
-          <Icon name="envelope" solid size={24} style={{ width: 30 }} />
-        )}
-        active={active === 'ContactScreen'}
+        icon={() => <Icon name="paper-plane" solid size={24} />}
+        active={active === 'ContactScreen' || !active}
         onPress={() => handleNavigateChange('ContactScreen')}
       />
     </Drawer.Section>

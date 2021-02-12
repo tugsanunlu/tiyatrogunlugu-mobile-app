@@ -1,17 +1,17 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState, useCallback } from 'react';
 import { getPostById } from '../api/post';
-import { useNavigation } from '@react-navigation/native';
 import PostDetail from '../components/PostDetail';
 import PostPlaceholder from '../components/PostPlaceholder';
 import Header from '../components/Header';
+import { useFocusEffect } from '@react-navigation/native';
 
-const PostScreen = ({ route }) => {
-  const navigation = useNavigation();
+const PostDetailScreen = ({ route, navigation }) => {
   const { postId } = route.params;
   const [post, setPost] = useState();
 
+  useFocusEffect(useCallback(() => () => setPost(), []));
+
   useEffect(() => {
-    if (postId != post?.id) setPost();
     getPostById(postId).then((resp) => {
       setPost(resp.data);
     });
@@ -29,4 +29,4 @@ const PostScreen = ({ route }) => {
   );
 };
 
-export default PostScreen;
+export default PostDetailScreen;
