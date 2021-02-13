@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "TiyatroGunlugu",
-    "slug": "TiyatroGunlugu",
-    "version": "1.0.0",
+    "name": "Tiyatro Günlüğü",
+    "slug": "tiyatro-gunlugu",
+    "version": "0.4.1",
     "orientation": "portrait",
     "icon": "",
     "splash": {
@@ -19,9 +19,11 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "",
+        "foregroundImage": "./android/icons/app-menu-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "icon": "./android/icons/app-menu-icon.png",
+      "package": "com.tugsanunlu.tiyatrogunlugu"
     },
     "web": {
       "favicon": ""

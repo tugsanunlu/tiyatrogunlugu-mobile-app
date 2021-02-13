@@ -1,4 +1,4 @@
-# tiyatrogunlugu-react-native
+# tiyatrogunlugu-mobile-app
 
 Source code of tiyatrogunlugu.com mobile app.
 
@@ -20,3 +20,11 @@ Audit
 Format checking with Prettier
 
 `yarn prettier`
+
+Fetch keystore
+
+`expo fetch:android:keystore`
+
+Build for Android
+
+`expo build:android`
