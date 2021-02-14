@@ -9,13 +9,14 @@ const PostDetailScreen = ({ route, navigation }) => {
   const { postId } = route.params;
   const [post, setPost] = useState();
 
-  useFocusEffect(useCallback(() => () => setPost(), []));
-
-  useEffect(() => {
-    getPostById(postId).then((resp) => {
-      setPost(resp.data);
-    });
-  }, [postId]);
+  useFocusEffect(
+    useCallback(() => {
+      getPostById(postId).then((resp) => {
+        setPost(resp.data);
+      });
+      return () => setPost();
+    }, [postId]),
+  );
 
   return (
     <Fragment>
