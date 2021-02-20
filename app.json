@@ -23,7 +23,8 @@
         "backgroundColor": "#FFFFFF"
       },
       "icon": "./android/icons/app-menu-icon.png",
-      "package": "com.tugsanunlu.tiyatrogunlugu"
+      "package": "com.tugsanunlu.tiyatrogunlugu",
+      "permissions": []
     },
     "web": {
       "favicon": ""
