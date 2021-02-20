@@ -4,8 +4,8 @@ import { styles } from '../styles/theme';
 import PostList from '../components/PostList';
 import { getPosts } from '../api/post';
 import PostPlaceholder from '../components/PostPlaceholder';
-import { PostContext } from '../store/post-context';
-import { POST_ACTION_TYPES } from '../store/reducers';
+import { PostContext } from '../store/context/post-context';
+import { POST_ACTION_TYPES } from '../store/reducers/post-reducers';
 import Header from '../components/Header';
 
 const PostsScreen = () => {

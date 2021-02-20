@@ -18,4 +18,4 @@ const postReducer = (state, action) => {
   }
 };
 
-export { postReducer, POST_ACTION_TYPES };
+export { POST_ACTION_TYPES, postReducer };

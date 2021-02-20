@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { configureFonts, DefaultTheme } from 'react-native-paper';
+import { configureFonts, DefaultTheme, DarkTheme } from 'react-native-paper';
 
 const fonts = {
   regular: 'TitilliumWeb_400Regular',
@@ -33,7 +33,7 @@ const fontConfig = {
   },
 };
 
-const theme = {
+const lightTheme = {
   ...DefaultTheme,
   fonts: configureFonts(fontConfig),
   colors: {
@@ -42,11 +42,19 @@ const theme = {
   },
 };
 
+const darkTheme = {
+  ...DarkTheme,
+  fonts: configureFonts(fontConfig),
+  colors: {
+    ...DarkTheme.colors,
+    primary: '#428bca',
+  },
+};
+
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
     justifyContent: 'flex-start',
   },
 });
 
-export { theme, styles, fonts };
+export { lightTheme, darkTheme, styles, fonts };

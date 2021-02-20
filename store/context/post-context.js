@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from 'react';
-import { postReducer } from '../store/reducers';
+import { postReducer } from '../reducers/post-reducers';
 
 const initialState = {
   posts: [],
