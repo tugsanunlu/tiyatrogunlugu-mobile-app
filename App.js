@@ -21,17 +21,13 @@ const App = () => {
       <AppContextProvider>
         <PostContextProvider>
           <AppContext.Consumer>
-            {(value) =>
-              value.state.darkMode ? (
-                <ThemeProvider theme={darkTheme}>
-                  <Navigation />
-                </ThemeProvider>
-              ) : (
-                <ThemeProvider theme={lightTheme}>
-                  <Navigation />
-                </ThemeProvider>
-              )
-            }
+            {(value) => (
+              <ThemeProvider
+                theme={value.state.darkMode ? darkTheme : lightTheme}
+              >
+                <Navigation />
+              </ThemeProvider>
+            )}
           </AppContext.Consumer>
         </PostContextProvider>
       </AppContextProvider>
