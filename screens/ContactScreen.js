@@ -4,10 +4,19 @@ import { List, Title } from 'react-native-paper';
 import { styles } from '../styles/theme';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Header from '../components/Header';
+import { useTheme } from 'react-native-paper';
 
 const ContactScreen = () => {
+  const { colors } = useTheme();
+
   return (
-    <View style={{ ...styles.container, flex: 1 }}>
+    <View
+      style={{
+        ...styles.container,
+        flex: 1,
+        backgroundColor: colors.background,
+      }}
+    >
       <Header />
       <View style={{ margin: 10 }}>
         <Title>iletişim</Title>
@@ -16,7 +25,12 @@ const ContactScreen = () => {
             title="@tugsanunlu"
             description="twitter"
             left={() => (
-              <Icon name="twitter" size={25} style={{ marginVertical: 10 }} />
+              <Icon
+                name="twitter"
+                size={25}
+                color={colors.text}
+                style={{ marginVertical: 10 }}
+              />
             )}
             onPress={() =>
               Linking.openURL('https://www.twitter.com/tugsanunlu/')
@@ -26,7 +40,12 @@ const ContactScreen = () => {
             title="@tugsanunlu"
             description="instagram"
             left={() => (
-              <Icon name="instagram" size={25} style={{ marginVertical: 10 }} />
+              <Icon
+                name="instagram"
+                size={25}
+                color={colors.text}
+                style={{ marginVertical: 10 }}
+              />
             )}
             onPress={() =>
               Linking.openURL('https://www.instagram.com/tugsanunlu/')
@@ -36,7 +55,12 @@ const ContactScreen = () => {
             title="unlutugsan@gmail.com"
             description="e-posta"
             left={() => (
-              <Icon name="envelope" size={25} style={{ marginVertical: 10 }} />
+              <Icon
+                name="envelope"
+                size={25}
+                color={colors.text}
+                style={{ marginVertical: 10 }}
+              />
             )}
             onPress={() => Linking.openURL('mailto:unlutugsan@gmail.com')}
           />

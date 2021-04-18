@@ -1,13 +1,16 @@
 import React, { Fragment, useState, useContext } from 'react';
+import { View } from 'react-native';
 import { Drawer, Title, Switch } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import { AppContext } from '../store/context/app-context';
 import { APP_ACTION_TYPES } from '../store/reducers/app-reducers';
+import { useTheme } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const NavigationContent = ({ navigation }) => {
   const [active, setActive] = useState('PostsScreen');
   const { state, dispatch } = useContext(AppContext);
   const { darkMode } = state;
+  const { colors } = useTheme();
 
   const handleNavigateChange = (screen, categoryId) => {
     navigation.navigate(screen, { categoryId });
@@ -20,24 +23,46 @@ const NavigationContent = ({ navigation }) => {
 
   return (
     <Fragment>
-      <Drawer.Section>
+      <Drawer.Section
+        style={{ backgroundColor: colors.background, height: '100%' }}
+      >
         <Title style={{ textAlign: 'center', marginTop: 30 }}>
           Tiyatro Günlüğü
         </Title>
         <Drawer.Item
           label="günlükler"
-          icon={() => <Icon name="book-open" solid size={24} />}
           active={active === 'PostsScreen'}
           onPress={() => handleNavigateChange('PostsScreen')}
         />
         <Drawer.Item
           label="iletişim"
-          icon={() => <Icon name="paper-plane" solid size={24} />}
           active={active === 'ContactScreen' || !active}
           onPress={() => handleNavigateChange('ContactScreen')}
         />
+        <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+          {darkMode ? (
+            <Icon
+              name="sun"
+              size={20}
+              color={colors.text}
+              style={{ marginTop: 13 }}
+            />
+          ) : (
+            <Icon
+              name="moon"
+              size={20}
+              color={colors.text}
+              style={{ marginTop: 13 }}
+            />
+          )}
+          <Switch
+            value={darkMode}
+            onValueChange={handleDarkModeToggle}
+            style={{ margin: 10 }}
+            color={colors.primary}
+          />
+        </View>
       </Drawer.Section>
-      <Switch value={darkMode} onValueChange={handleDarkModeToggle} />
     </Fragment>
   );
 };

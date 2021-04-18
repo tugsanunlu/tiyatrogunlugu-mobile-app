@@ -7,16 +7,24 @@ import PostTagList from './PostTagList';
 import PostHTMLView from './PostHTMLView';
 import { parseISODateTime } from '../utils/helpers';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { useTheme } from 'react-native-paper';
 
 const PostDetail = ({ post, navigation }) => {
   const tags = post._embedded['wp:term'][1];
+  const { colors } = useTheme();
 
   return (
-    <View style={{ ...styles.container, flex: 1 }}>
+    <View
+      style={{
+        ...styles.container,
+        flex: 1,
+        backgroundColor: colors.background,
+      }}
+    >
       <ScrollView>
         <Card style={{ marginBottom: 15 }}>
           <Button
-            icon={() => <Icon name="undo" size={15} />}
+            icon={() => <Icon name="undo" size={15} color={colors.text} />}
             onPress={() => navigation.goBack()}
           ></Button>
           {post._embedded['wp:featuredmedia'] && (

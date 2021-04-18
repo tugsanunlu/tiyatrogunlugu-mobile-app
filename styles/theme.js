@@ -39,6 +39,7 @@ const lightTheme = {
   colors: {
     ...DefaultTheme.colors,
     primary: '#428bca',
+    background: '#ffffff',
   },
 };
 
@@ -48,6 +49,7 @@ const darkTheme = {
   colors: {
     ...DarkTheme.colors,
     primary: '#428bca',
+    background: '#222222',
   },
 };
 

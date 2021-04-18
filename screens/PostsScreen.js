@@ -7,10 +7,12 @@ import PostPlaceholder from '../components/PostPlaceholder';
 import { PostContext } from '../store/context/post-context';
 import { POST_ACTION_TYPES } from '../store/reducers/post-reducers';
 import Header from '../components/Header';
+import { useTheme } from 'react-native-paper';
 
 const PostsScreen = () => {
   const { state, dispatch } = useContext(PostContext);
   const { posts, page } = state;
+  const { colors } = useTheme();
 
   useEffect(() => {
     dispatch({ type: POST_ACTION_TYPES.SET_LOADER_TOGGLE });
@@ -21,7 +23,13 @@ const PostsScreen = () => {
   }, [page]);
 
   return (
-    <View style={{ ...styles.container, flex: 1 }}>
+    <View
+      style={{
+        ...styles.container,
+        flex: 1,
+        backgroundColor: colors.background,
+      }}
+    >
       <Header />
       {posts.length ? (
         <PostList posts={posts} />
