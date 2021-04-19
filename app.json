@@ -2,7 +2,7 @@
   "expo": {
     "name": "Tiyatro Günlüğü",
     "slug": "tiyatro-gunlugu",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "orientation": "portrait",
     "icon": "",
     "splash": {
@@ -24,7 +24,8 @@
       },
       "icon": "./android/icons/app-menu-icon.png",
       "package": "com.tugsanunlu.tiyatrogunlugu",
-      "permissions": []
+      "permissions": [],
+      "versionCode": 2
     },
     "web": {
       "favicon": ""
