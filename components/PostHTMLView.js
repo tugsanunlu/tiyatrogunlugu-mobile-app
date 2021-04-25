@@ -10,7 +10,10 @@ const PostHTMLView = ({ html }) => {
   return (
     <HTML
       source={{ html }}
-      baseFontStyle={{ fontFamily: fonts.regular, color: colors.text }}
+      baseFontStyle={{ fontFamily: fonts.regular }}
+      tagsStyles={{
+        p: { color: colors.text },
+      }}
     />
   );
 };
