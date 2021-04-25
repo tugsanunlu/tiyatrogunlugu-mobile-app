@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { Chip } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useTheme } from 'react-native-paper';
+import PropTypes from 'prop-types';
 
 const PostTagList = ({ tags }) => {
   const { colors } = useTheme();
@@ -22,6 +23,10 @@ const PostTagList = ({ tags }) => {
       ))}
     </View>
   );
+};
+
+PostTagList.propTypes = {
+  tags: PropTypes.array.isRequired,
 };
 
 export default PostTagList;

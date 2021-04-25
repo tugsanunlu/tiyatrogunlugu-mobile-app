@@ -5,6 +5,7 @@ import { AppContext } from '../store/context/app-context';
 import { APP_ACTION_TYPES } from '../store/reducers/app-reducers';
 import { useTheme } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import PropTypes from 'prop-types';
 
 const NavigationContent = ({ navigation }) => {
   const [active, setActive] = useState('PostsScreen');
@@ -66,4 +67,9 @@ const NavigationContent = ({ navigation }) => {
     </Fragment>
   );
 };
+
+NavigationContent.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
+
 export default NavigationContent;

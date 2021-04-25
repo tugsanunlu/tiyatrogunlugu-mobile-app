@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import { useFocusEffect } from '@react-navigation/native';
 import { useTheme } from 'react-native-paper';
 import { styles } from '../styles/theme';
+import PropTypes from 'prop-types';
 
 const PostDetailScreen = ({ route, navigation }) => {
   const { postId } = route.params;
@@ -40,6 +41,11 @@ const PostDetailScreen = ({ route, navigation }) => {
       )}
     </Fragment>
   );
+};
+
+PostDetailScreen.propTypes = {
+  route: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
 };
 
 export default PostDetailScreen;

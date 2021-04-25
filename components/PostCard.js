@@ -5,6 +5,7 @@ import PostHTMLView from './PostHTMLView';
 import HTML from 'react-native-render-html';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { parseISODateTime } from '../utils/helpers';
+import PropTypes from 'prop-types';
 
 const PostCard = ({ post }) => {
   const navigation = useNavigation();
@@ -37,6 +38,19 @@ const PostCard = ({ post }) => {
       </Card.Actions>
     </Card>
   );
+};
+
+PostCard.propTypes = {
+  post: PropTypes.shape({
+    title: PropTypes.shape({
+      rendered: PropTypes.string.isRequired,
+    }),
+    excerpt: PropTypes.shape({
+      rendered: PropTypes.string.isRequired,
+    }),
+    _embedded: PropTypes.object.isRequired,
+    id: PropTypes.number.isRequired,
+  }),
 };
 
 export default PostCard;

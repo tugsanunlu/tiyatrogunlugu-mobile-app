@@ -8,6 +8,7 @@ import PostHTMLView from './PostHTMLView';
 import { parseISODateTime } from '../utils/helpers';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useTheme } from 'react-native-paper';
+import PropTypes from 'prop-types';
 
 const PostDetail = ({ post, navigation }) => {
   const tags = post._embedded['wp:term'][1];
@@ -46,6 +47,20 @@ const PostDetail = ({ post, navigation }) => {
       </ScrollView>
     </View>
   );
+};
+
+PostDetail.propTypes = {
+  post: PropTypes.shape({
+    title: PropTypes.shape({
+      rendered: PropTypes.string.isRequired,
+    }),
+    content: PropTypes.shape({
+      rendered: PropTypes.string.isRequired,
+    }),
+    _embedded: PropTypes.object.isRequired,
+    date: PropTypes.string.isRequired,
+  }),
+  navigation: PropTypes.object.isRequired,
 };
 
 export default PostDetail;
