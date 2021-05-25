@@ -23,6 +23,8 @@ const PostCard = ({ post }) => {
       <Card.Content>
         <Text>
           <Icon name="calendar" /> {parseISODateTime(post.date)}
+          {`   `}
+          <Icon name="user" /> {post._embedded['author'][0].name}
         </Text>
         <PostHTMLView html={post.excerpt.rendered} />
       </Card.Content>

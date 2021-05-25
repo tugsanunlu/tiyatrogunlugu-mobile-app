@@ -25,8 +25,11 @@ const PostDetail = ({ post, navigation }) => {
       <ScrollView>
         <Card style={{ marginBottom: 15 }}>
           <Button
-            icon={() => <Icon name="undo" size={15} color={colors.text} />}
+            icon={() => (
+              <Icon name="arrow-left" size={20} color={colors.text} />
+            )}
             onPress={() => navigation.goBack()}
+            style={{ position: 'absolute', zIndex: 2, left: 5 }}
           ></Button>
           {post._embedded['wp:featuredmedia'] && (
             <HTML
@@ -39,6 +42,8 @@ const PostDetail = ({ post, navigation }) => {
           <Card.Content>
             <Text>
               <Icon name="calendar" /> {parseISODateTime(post.date)}
+              {`   `}
+              <Icon name="user" /> {post._embedded['author'][0].name}
             </Text>
             <PostHTMLView html={post.content.rendered} />
             {tags && <PostTagList tags={tags} />}

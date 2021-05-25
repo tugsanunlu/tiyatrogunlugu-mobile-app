@@ -9,12 +9,11 @@ import {
 const PostPlaceholder = () => {
   return (
     <Placeholder Animation={Fade} style={{ marginVertical: 15 }}>
-      <PlaceholderMedia style={{ width: '100%', height: 200 }} />
-      <PlaceholderLine />
+      <PlaceholderMedia style={{ width: '100%', height: 300 }} />
       <PlaceholderLine
         width={90}
         height={30}
-        style={{ marginHorizontal: '5%', marginTop: 10 }}
+        style={{ marginHorizontal: '5%', marginTop: 25 }}
       />
       {Array.from({ length: 6 }).map((_, index) => (
         <PlaceholderLine

@@ -10,10 +10,23 @@ const PostHTMLView = ({ html }) => {
   return (
     <HTML
       source={{ html }}
-      baseFontStyle={{ fontFamily: fonts.regular }}
+      baseFontStyle={{ fontFamily: fonts.regular, lineHeight: 24 }}
       tagsStyles={{
-        p: { color: colors.text },
+        p: {
+          color: colors.text,
+          marginVertical: 15,
+        },
+        a: {
+          color: colors.text,
+        },
       }}
+      classesStyles={{
+        cta: {
+          color: colors.text,
+          marginVertical: 20,
+        },
+      }}
+      ignoredTags={['span']}
     />
   );
 };
