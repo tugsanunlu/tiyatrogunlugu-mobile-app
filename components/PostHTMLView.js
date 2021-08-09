@@ -15,15 +15,27 @@ const PostHTMLView = ({ html }) => {
         p: {
           color: colors.text,
           marginVertical: 15,
+          textAlign: 'justify',
         },
         a: {
           color: colors.text,
+        },
+        strong: {
+          fontFamily: fonts.medium,
+          fontWeight: 'normal',
         },
       }}
       classesStyles={{
         cta: {
           color: colors.text,
           marginVertical: 20,
+          fontFamily: fonts.regular,
+        },
+        title: {
+          fontSize: 18,
+          color: colors.text,
+          fontFamily: fonts.medium,
+          fontWeight: 900,
         },
       }}
       ignoredTags={['span']}

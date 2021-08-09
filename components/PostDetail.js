@@ -38,7 +38,13 @@ const PostDetail = ({ post, navigation }) => {
               }}
             />
           )}
-          <Card.Title title={post.title.rendered} />
+          <Card.Title
+            title={
+              <PostHTMLView
+                html={`<div class="title">${post.title.rendered}</div>`}
+              />
+            }
+          />
           <Card.Content>
             <Text>
               <Icon name="calendar" /> {parseISODateTime(post.date)}

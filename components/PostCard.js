@@ -9,17 +9,26 @@ import PropTypes from 'prop-types';
 
 const PostCard = ({ post }) => {
   const navigation = useNavigation();
+  const openPostDetail = (postId) => {
+    navigation.navigate('PostDetailScreen', { postId });
+  };
 
   return (
     <Card style={{ marginBottom: 15 }}>
       {post._embedded['wp:featuredmedia'] && (
         <HTML
           source={{
-            html: `<img src='${post._embedded['wp:featuredmedia'][0].source_url}' />`,
+            html: `<img src='${post._embedded['wp:featuredmedia'][0].source_url}'  />`,
           }}
         />
       )}
-      <Card.Title title={post.title.rendered} />
+      <Card.Title
+        title={
+          <PostHTMLView
+            html={`<div class="title">${post.title.rendered}</div>`}
+          />
+        }
+      />
       <Card.Content>
         <Text>
           <Icon name="calendar" /> {parseISODateTime(post.date)}
@@ -29,12 +38,7 @@ const PostCard = ({ post }) => {
         <PostHTMLView html={post.excerpt.rendered} />
       </Card.Content>
       <Card.Actions style={{ justifyContent: 'flex-end' }}>
-        <Button
-          onPress={() =>
-            navigation.navigate('PostDetailScreen', { postId: post.id })
-          }
-          mode="contained"
-        >
+        <Button onPress={() => openPostDetail(post.id)} mode="contained">
           Devamı
         </Button>
       </Card.Actions>
