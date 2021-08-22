@@ -9,7 +9,7 @@ const PostCategory = ({ category, pressHandler }) => {
       style={{ marginBottom: 20 }}
     >
       <Card.Cover source={{ uri: category.featuredImage }} />
-      <Card.Title title={category.title} />
+      <Card.Title title={category.title} titleStyle={{ fontSize: 18 }} />
     </Card>
   );
 };
