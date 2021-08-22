@@ -44,7 +44,7 @@ const PostsScreen = () => {
         handleLoadPosts(resp);
       })
       .catch(() => handleEmptyPosts());
-  }, [page]);
+  }, [page, category]);
 
   return (
     <View
