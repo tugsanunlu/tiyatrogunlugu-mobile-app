@@ -4,6 +4,7 @@ import { postReducer } from '../reducers/post-reducers';
 const initialState = {
   posts: [],
   page: 1,
+  category: null,
   isLoader: false,
 };
 

@@ -6,15 +6,16 @@ import HTML from 'react-native-render-html';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { parseISODateTime } from '../utils/helpers';
 import PropTypes from 'prop-types';
+import { SCREENS } from '../utils/constants';
 
 const PostCard = ({ post }) => {
   const navigation = useNavigation();
   const openPostDetail = (postId) => {
-    navigation.navigate('PostDetailScreen', { postId });
+    navigation.navigate(SCREENS.POST_DETAIL, { postId });
   };
 
   return (
-    <Card style={{ marginBottom: 15 }}>
+    <Card style={{ marginBottom: 20 }}>
       {post._embedded['wp:featuredmedia'] && (
         <HTML
           source={{

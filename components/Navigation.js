@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import NavigationContent from './NavigationContent';
 import PostsScreen from '../screens/PostsScreen';
 import PostDetailScreen from '../screens/PostDetailScreen';
+import CategoriesScreen from '../screens/CategoriesScreen';
 import ContactScreen from '../screens/ContactScreen';
 
 const Navigation = () => {
@@ -18,6 +19,7 @@ const Navigation = () => {
       >
         <Drawer.Screen name="PostsScreen" component={PostsScreen} />
         <Drawer.Screen name="PostDetailScreen" component={PostDetailScreen} />
+        <Drawer.Screen name="CategoriesScreen" component={CategoriesScreen} />
         <Drawer.Screen name="ContactScreen" component={ContactScreen} />
       </Drawer.Navigator>
     </NavigationContainer>

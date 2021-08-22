@@ -6,7 +6,7 @@ import { PostContext } from '../store/context/post-context';
 import { POST_ACTION_TYPES } from '../store/reducers/post-reducers';
 import PropTypes from 'prop-types';
 
-const PostList = ({ posts }) => {
+const PostList = ({ posts, show404Snackbar }) => {
   const { state, dispatch } = useContext(PostContext);
   const { isLoader } = state;
 
@@ -22,9 +22,11 @@ const PostList = ({ posts }) => {
         keyExtractor={(post) => post.id.toString()}
         onEndReached={!isLoader && handleMorePosts}
         onEndReachedThreshold={0.3}
-        ListFooterComponent={() => (
-          <ActivityIndicator size={35} style={{ marginVertical: 20 }} />
-        )}
+        ListFooterComponent={() =>
+          !show404Snackbar && (
+            <ActivityIndicator size={35} style={{ marginVertical: 20 }} />
+          )
+        }
       />
     </View>
   );

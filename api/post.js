@@ -9,6 +9,16 @@ const getPosts = (page) => {
   });
 };
 
+const getPostsByCategoryId = ({ page, categoryId }) => {
+  return API.get('/posts', {
+    params: {
+      _embed: 1,
+      categories: categoryId,
+      page,
+    },
+  });
+};
+
 const getPostById = (postId) => {
   return API.get(`/posts/${postId}`, {
     params: {
@@ -17,4 +27,4 @@ const getPostById = (postId) => {
   });
 };
 
-export { getPosts, getPostById };
+export { getPosts, getPostById, getPostsByCategoryId };

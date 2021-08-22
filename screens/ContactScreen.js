@@ -1,6 +1,6 @@
 import React from 'react';
 import { Linking, View } from 'react-native';
-import { List, Title } from 'react-native-paper';
+import { List } from 'react-native-paper';
 import { styles } from '../styles/theme';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Header from '../components/Header';
@@ -19,7 +19,6 @@ const ContactScreen = () => {
     >
       <Header />
       <View style={{ margin: 10 }}>
-        <Title>iletişim</Title>
         <List.Section>
           <List.Item
             title="@tugsanunlu"

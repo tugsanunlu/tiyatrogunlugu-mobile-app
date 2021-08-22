@@ -6,16 +6,18 @@ import { APP_ACTION_TYPES } from '../store/reducers/app-reducers';
 import { useTheme } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import PropTypes from 'prop-types';
+import { SCREENS } from '../utils/constants';
 
 const NavigationContent = ({ navigation }) => {
-  const [active, setActive] = useState('PostsScreen');
-  const { state, dispatch } = useContext(AppContext);
-  const { darkMode } = state;
+  const {
+    state: { darkMode, activeMenu },
+    dispatch,
+  } = useContext(AppContext);
   const { colors } = useTheme();
 
   const handleNavigateChange = (screen, categoryId) => {
     navigation.navigate(screen, { categoryId });
-    setActive(screen);
+    dispatch({ type: APP_ACTION_TYPES.SET_ACTIVE_MENU, activeMenu: screen });
   };
 
   const handleDarkModeToggle = () => {
@@ -32,13 +34,18 @@ const NavigationContent = ({ navigation }) => {
         </Title>
         <Drawer.Item
           label="günlükler"
-          active={active === 'PostsScreen'}
-          onPress={() => handleNavigateChange('PostsScreen')}
+          active={activeMenu === SCREENS.POSTS}
+          onPress={() => handleNavigateChange(SCREENS.POSTS)}
+        />
+        <Drawer.Item
+          label="kategoriler"
+          active={activeMenu === SCREENS.CATEGORIES}
+          onPress={() => handleNavigateChange(SCREENS.CATEGORIES)}
         />
         <Drawer.Item
           label="iletişim"
-          active={active === 'ContactScreen' || !active}
-          onPress={() => handleNavigateChange('ContactScreen')}
+          active={activeMenu === SCREENS.CONTACT}
+          onPress={() => handleNavigateChange(SCREENS.CONTACT)}
         />
         <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
           {darkMode ? (
