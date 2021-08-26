@@ -23,13 +23,7 @@ const PostCard = ({ post }) => {
           }}
         />
       )}
-      <Card.Title
-        title={
-          <PostHTMLView
-            html={`<div class="title">${post.title.rendered}</div>`}
-          />
-        }
-      />
+      <Card.Title title={post.title.rendered} />
       <Card.Content>
         <Text>
           <Icon name="calendar" /> {parseISODateTime(post.date)}
