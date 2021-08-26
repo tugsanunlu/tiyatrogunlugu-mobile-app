@@ -24,7 +24,6 @@ const CategoriesScreen = () => {
       activeMenu: SCREENS.POSTS,
     });
     dispatch({ type: POST_ACTION_TYPES.CLEAR_POSTS });
-    dispatch({ type: POST_ACTION_TYPES.RESET_PAGE });
     dispatch({ type: POST_ACTION_TYPES.SET_CATEGORY, category: categoryId });
   };
 

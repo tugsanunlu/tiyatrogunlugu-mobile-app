@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { View } from 'react-native';
 import { styles } from '../styles/theme';
 import PostList from '../components/PostList';
@@ -7,7 +7,7 @@ import PostPlaceholder from '../components/PostPlaceholder';
 import { PostContext } from '../store/context/post-context';
 import { POST_ACTION_TYPES } from '../store/reducers/post-reducers';
 import Header from '../components/Header';
-import { useTheme, Snackbar } from 'react-native-paper';
+import { useTheme, FAB } from 'react-native-paper';
 
 const PostsScreen = () => {
   const {
@@ -15,7 +15,14 @@ const PostsScreen = () => {
     dispatch,
   } = useContext(PostContext);
   const { colors } = useTheme();
-  const [show404Snackbar, setShow404Snackbar] = useState(false);
+
+  const handleResetCategory = () => {
+    dispatch({ type: POST_ACTION_TYPES.CLEAR_POSTS });
+    dispatch({
+      type: POST_ACTION_TYPES.SET_CATEGORY,
+      category: null,
+    });
+  };
 
   useEffect(() => {
     dispatch({ type: POST_ACTION_TYPES.SET_LOADER_TOGGLE });
@@ -23,11 +30,9 @@ const PostsScreen = () => {
     const handleLoadPosts = (resp) => {
       dispatch({ type: POST_ACTION_TYPES.SET_LOADER_TOGGLE });
       dispatch({ type: POST_ACTION_TYPES.LOAD_POSTS, posts: resp.data });
-      setShow404Snackbar(false);
     };
     const handleEmptyPosts = () => {
       dispatch({ type: POST_ACTION_TYPES.SET_LOADER_TOGGLE });
-      setShow404Snackbar(true);
     };
 
     if (category) {
@@ -57,10 +62,24 @@ const PostsScreen = () => {
       <Header />
       {posts.length ? (
         <React.Fragment>
-          <PostList posts={posts} show404Snackbar={show404Snackbar} />
-          <Snackbar visible={show404Snackbar} duration={2000}>
-            Bu kategoride okunacak başka günlük kalmadı.
-          </Snackbar>
+          {category && (
+            <FAB
+              small
+              label="Kategori seçimini iptal et"
+              uppercase={false}
+              style={{
+                backgroundColor: colors.primary,
+                position: 'absolute',
+                margin: 15,
+                left: 0,
+                bottom: 0,
+                zIndex: 2,
+                borderRadius: 5,
+              }}
+              onPress={() => handleResetCategory()}
+            />
+          )}
+          <PostList posts={posts} />
         </React.Fragment>
       ) : (
         Array.from({ length: 4 }).map((_, index) => (
