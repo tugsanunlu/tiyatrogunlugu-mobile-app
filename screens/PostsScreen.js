@@ -65,7 +65,8 @@ const PostsScreen = () => {
           {category && (
             <FAB
               small
-              label="Kategori seçimini iptal et"
+              label="Kategori seçimini temizle"
+              icon="delete"
               uppercase={false}
               style={{
                 backgroundColor: colors.primary,

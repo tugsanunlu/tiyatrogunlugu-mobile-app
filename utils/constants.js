@@ -10,24 +10,6 @@ const POST_CATEGORIES = [
       'https://tiyatrogunlugu.com/wp-content/uploads/tirnak-icinde-hizmetciler-tiyatro-oyunu-1-750x484.jpg',
   },
   {
-    id: 329,
-    title: 'okuduklarım',
-    featuredImage:
-      'https://tiyatrogunlugu.com/wp-content/uploads/bir_zamanlar_londrada-kapak.jpg',
-  },
-  {
-    id: 611,
-    title: 'katıldıklarım',
-    featuredImage:
-      'https://tiyatrogunlugu.com/wp-content/uploads/seminer_shakespeare_ile_dusunmek-750x312.jpg',
-  },
-  {
-    id: 623,
-    title: 'dinlediklerim',
-    featuredImage:
-      'https://tiyatrogunlugu.com/wp-content/uploads/tiyatro_sarkilari.jpg',
-  },
-  {
     id: 195,
     title: 'duyurduklarım',
     featuredImage:

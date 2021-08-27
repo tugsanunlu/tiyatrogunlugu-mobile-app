@@ -8,6 +8,26 @@ import { useTheme } from 'react-native-paper';
 
 const ContactScreen = () => {
   const { colors } = useTheme();
+  const contacts = [
+    {
+      title: '@tugsanunlu',
+      description: 'twitter',
+      icon: 'twitter',
+      link: 'https://www.twitter.com/tugsanunlu/',
+    },
+    {
+      title: '@tugsanunlu',
+      description: 'instagram',
+      icon: 'instagram',
+      link: 'https://www.instagram.com/tugsanunlu/',
+    },
+    {
+      title: 'unlutugsan@gmail.com',
+      description: 'e-posta',
+      icon: 'envelope',
+      link: 'mailto:unlutugsan@gmail.com',
+    },
+  ];
 
   return (
     <View
@@ -20,49 +40,22 @@ const ContactScreen = () => {
       <Header />
       <View style={{ margin: 10 }}>
         <List.Section>
-          <List.Item
-            title="@tugsanunlu"
-            description="twitter"
-            left={() => (
-              <Icon
-                name="twitter"
-                size={25}
-                color={colors.text}
-                style={{ marginVertical: 10 }}
-              />
-            )}
-            onPress={() =>
-              Linking.openURL('https://www.twitter.com/tugsanunlu/')
-            }
-          />
-          <List.Item
-            title="@tugsanunlu"
-            description="instagram"
-            left={() => (
-              <Icon
-                name="instagram"
-                size={25}
-                color={colors.text}
-                style={{ marginVertical: 10 }}
-              />
-            )}
-            onPress={() =>
-              Linking.openURL('https://www.instagram.com/tugsanunlu/')
-            }
-          />
-          <List.Item
-            title="unlutugsan@gmail.com"
-            description="e-posta"
-            left={() => (
-              <Icon
-                name="envelope"
-                size={25}
-                color={colors.text}
-                style={{ marginVertical: 10 }}
-              />
-            )}
-            onPress={() => Linking.openURL('mailto:unlutugsan@gmail.com')}
-          />
+          {contacts.map((contact, index) => (
+            <List.Item
+              key={index}
+              title={contact.title}
+              description={contact.description}
+              left={() => (
+                <Icon
+                  name={contact.icon}
+                  size={25}
+                  color={colors.text}
+                  style={{ marginVertical: 10 }}
+                />
+              )}
+              onPress={() => Linking.openURL(contact.link)}
+            />
+          ))}
         </List.Section>
       </View>
     </View>
