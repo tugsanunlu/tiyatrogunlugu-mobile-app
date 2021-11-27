@@ -24,6 +24,10 @@ const PostHTMLView = ({ html }) => {
           fontFamily: fonts.medium,
           fontWeight: 'normal',
         },
+        h4: {
+          color: colors.text,
+          fontSize: 17,
+        },
       }}
       classesStyles={{
         cta: {
