@@ -18,4 +18,8 @@ const parseISODateTime = (dateTime) => {
   return `${splittedDate[2]} ${months[splittedDate[1] - 1]} ${splittedDate[0]}`;
 };
 
-export { parseISODateTime };
+const replaceApostrophe = (text) => {
+  return text.replace('&#8217;', "'");
+};
+
+export { parseISODateTime, replaceApostrophe };

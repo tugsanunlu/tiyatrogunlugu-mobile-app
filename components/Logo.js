@@ -7,7 +7,7 @@ const Logo = () => {
     <View style={{ flex: 1, alignItems: 'center' }}>
       <Title style={styles.title}>Tiyatro Günlüğü</Title>
       <Subheading style={styles.subtitle}>
-        çaylak bir tiyatro izleyicisinin notları
+        bir tiyatro izleyicisinin notları
       </Subheading>
     </View>
   );

@@ -9,6 +9,7 @@ import { parseISODateTime } from '../utils/helpers';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useTheme } from 'react-native-paper';
 import PropTypes from 'prop-types';
+import PostTitle from './PostTitle';
 
 const PostDetail = ({ post, navigation }) => {
   const tags = post._embedded['wp:term'][1];
@@ -38,7 +39,7 @@ const PostDetail = ({ post, navigation }) => {
               }}
             />
           )}
-          <Card.Title title={post.title.rendered} />
+          <PostTitle title={post.title.rendered} />
           <Card.Content>
             <Text>
               <Icon name="calendar" /> {parseISODateTime(post.date)}

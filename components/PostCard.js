@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { parseISODateTime } from '../utils/helpers';
 import PropTypes from 'prop-types';
 import { SCREENS } from '../utils/constants';
+import PostTitle from './PostTitle';
 
 const PostCard = ({ post }) => {
   const navigation = useNavigation();
@@ -23,7 +24,7 @@ const PostCard = ({ post }) => {
           }}
         />
       )}
-      <Card.Title title={post.title.rendered} />
+      <PostTitle title={post.title.rendered} />
       <Card.Content>
         <Text>
           <Icon name="calendar" /> {parseISODateTime(post.date)}

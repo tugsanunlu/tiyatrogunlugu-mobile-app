@@ -26,7 +26,7 @@ const PostHTMLView = ({ html }) => {
         },
         h4: {
           color: colors.text,
-          fontSize: 17,
+          fontSize: 18,
         },
       }}
       classesStyles={{
