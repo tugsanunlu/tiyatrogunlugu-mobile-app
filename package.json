@@ -19,6 +19,7 @@
     "expo-font": "~10.0.3",
     "expo-permissions": "~13.0.3",
     "expo-status-bar": "~1.1.0",
+    "expo-updates": "~0.10.15",
     "lru-cache": "^6.0.0",
     "prop-types": "^15.7.2",
     "react": "17.0.1",
